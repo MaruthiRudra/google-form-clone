@@ -1,1 +1,18 @@
-<p>form-builder works!</p>
+<section>
+    <h2>Form Builder</h2>
+    <input [(ngModel)]="formTitle" type="text" placeholder="Form Title" />
+    <ul>
+      <li *ngFor="let field of fields; let i = index">
+        <input [(ngModel)]="field.label" type="text" placeholder="Label" />
+        <select [(ngModel)]="field.type">
+          <option value="text">Text</option>
+          <option value="radio">Multiple Choice</option>
+          <option value="checkbox">Checkbox</option>
+        </select>
+        <button (click)="deleteField(i)">Delete</button>
+      </li>
+    </ul>
+    <button (click)="addField()">Add Field</button>
+    <button (click)="saveForm()">Save Form</button>
+  </section>
+  

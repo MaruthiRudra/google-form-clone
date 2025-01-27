@@ -1,1 +1,9 @@
-<p>form-list works!</p>
+<section>
+  <h2>Forms</h2>
+  <ul>
+    <li *ngFor="let form of forms; let i = index">
+      {{ form.title }}
+      <button (click)="viewForm(i)">View</button>
+    </li>
+  </ul>
+</section>

@@ -1,1 +1,13 @@
-<p>form-preview works!</p>
+<section>
+    <h2>Form Preview</h2>
+    <form>
+      <div *ngFor="let field of fields">
+        <label>{{ field.label }}</label>
+        <input *ngIf="field.type === 'text'" type="text" />
+        <input *ngIf="field.type === 'radio'" type="radio" />
+        <input *ngIf="field.type === 'checkbox'" type="checkbox" />
+      </div>
+      <button (click)="submitResponse()">Submit</button>
+    </form>
+  </section>
+  
